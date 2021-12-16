@@ -3,33 +3,30 @@ import random
 
 if __name__ == "__main__":
     while True:
-        user_action = input("Choose 1 - Mage, 2 - Warrior, 3 - Rogue: ")
-        possible_actions = ["Mage", "Warrior", "Rogue"]
-        computer_action = random.choice(possible_actions)
-        print(f"\nВы выбрали {user_action}, компьютер выбрал {computer_action}.\n")
-        if user_action == computer_action:
-            print(f"Оба пользователя выбрали {user_action}. Ничья!!")
-        elif user_action == "Mage":
-            if computer_action == "Warrior":
-                print("Камень бьет ножницы! Вы победили!")
-            else:
-                print("Бумага оборачивает камень! Вы проиграли.")
-        elif user_action == "Rogue":
-            if computer_action == "Mage":
-                print("Бумага оборачивает камень! Вы победили!")
-            else:
-                print("Ножницы режут бумагу! Вы проиграли.")
-        elif user_action == "Warrior":
-            if computer_action == "Rogue":
-                print("Ножницы режут бумагу! Вы победили!")
-            else:
-                print("Камень бьет ножницы! Вы проиграли.")
-        play_again = ""
-        play_again = input("Сыграем еще? (д/н): ")
-        if play_again.lower() != "д":
-            print ()
-            print ("Good Luck ")
-            break
+        def fight(attack, defence):
+            if attack == defence:
+                return 0
+            if attack == 1 and defence == 2:
+                return 1
+            if attack == 1 and defence == 3:
+                return -1
+            if attack == 2 and defence == 3:
+                return 1
+            if attack == 2 and defence == 1:
+                return -1
+            if attack == 3 and defence == 1:
+                return 1
+            if attack == 3 and defence == 2:
+                return -1
+
+        def attack(attack_choise: int, enemy: Enemy):
+            defence = enemy.select_defence
+            return fight(attack_choise, defence)
+
+#Warrior = 1
+#Rogue = 2
+#Mage = 3
+
 
 
 

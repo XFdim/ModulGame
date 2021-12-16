@@ -2,20 +2,16 @@ from typing import Union
 
 
 class Enemy:
-    def __init__(self, level, lives):
-        self.level = level
-        self.lives = lives
+    @staticmethod
+    def select_defence():
+        return random.randint(1, 3)
 
-Enemy1 = Enemy(1, 3)
-Enemy2 = Enemy(2, 5)
-Enemy3 = Enemy(3, 8)
+    def select_attack():
+        return random.randint(1, 3)
 
 
-class Player:
-    def __init__(self, nick, lives, score, allowed_attacks):
-        self.nick = input("Eneter player nickname: ")
-        self.lives = lives(5)
-        self.score = score(0)
+
+
 
 
 
